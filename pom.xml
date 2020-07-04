@@ -4,7 +4,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>esfe</groupId>
-    <artifactId>quarkus-hackathon-alexa</artifactId>
+    <artifactId>quarkus.hackathon.alex</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -41,6 +41,10 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-amazon-alexa</artifactId>
         </dependency>
     </dependencies>
     <build>
