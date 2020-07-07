@@ -46,6 +46,11 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-amazon-alexa</artifactId>
         </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
