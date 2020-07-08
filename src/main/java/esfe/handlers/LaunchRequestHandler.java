@@ -17,11 +17,13 @@ public class LaunchRequestHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-        String speechText = "Just a test!";
+        String speechText = "Welcome to Alexa Skills Kit, Please tell me what you want to buy by saying get me milk";
+        String repromptText = "Please tell me what you want to buy by saying get me milk";
         return input.getResponseBuilder()
                 .withSpeech(speechText)
                 .withSimpleCard("HelloWorld", speechText)
-                .withReprompt(speechText)
+                .withSpeech(speechText)
+                .withReprompt(repromptText)
                 .build();
     }
 
