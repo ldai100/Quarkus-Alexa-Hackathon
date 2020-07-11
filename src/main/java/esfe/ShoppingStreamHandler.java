@@ -11,6 +11,7 @@ import esfe.handlers.SessionEndedRequestHandler;
 import esfe.handlers.FallbackIntentHandler;
 import esfe.handlers.LaunchRequestHandler;
 
+import org.eclipse.microprofile.faulttolerance.Retry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,6 +24,7 @@ public class ShoppingStreamHandler extends SkillStreamHandler {
 
     private static final Logger log = LoggerFactory.getLogger(ShoppingStreamHandler.class);
 
+    @Retry(maxRetries = 3)
     private static Skill getSkill() {
         log.error("log test");
 
