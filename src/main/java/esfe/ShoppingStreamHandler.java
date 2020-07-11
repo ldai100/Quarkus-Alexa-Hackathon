@@ -11,11 +11,14 @@ import esfe.handlers.SessionEndedRequestHandler;
 import esfe.handlers.FallbackIntentHandler;
 import esfe.handlers.LaunchRequestHandler;
 
+import org.eclipse.microprofile.faulttolerance.Retry;
+
 import javax.inject.Named;
 
 @Named("alexa")
 public class ShoppingStreamHandler extends SkillStreamHandler {
 
+    @Retry(maxRetries = 3)
     private static Skill getSkill() {
         return Skills.standard()
                 .addRequestHandlers(
