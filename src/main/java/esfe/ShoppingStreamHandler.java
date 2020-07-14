@@ -1,16 +1,9 @@
 package esfe;
 
 import com.amazon.ask.Skill;
-import com.amazon.ask.Skills;
 import com.amazon.ask.SkillStreamHandler;
-
-import esfe.handlers.CancelAndStopIntentHandler;
-import esfe.handlers.StartShoppingIntentHandler;
-import esfe.handlers.HelpIntentHandler;
-import esfe.handlers.SessionEndedRequestHandler;
-import esfe.handlers.FallbackIntentHandler;
-import esfe.handlers.LaunchRequestHandler;
-
+import com.amazon.ask.Skills;
+import esfe.handlers.*;
 import org.eclipse.microprofile.faulttolerance.Retry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,6 +23,9 @@ public class ShoppingStreamHandler extends SkillStreamHandler {
 
         return Skills.standard()
                 .addRequestHandlers(
+                        new HelloFirst(),
+                        new HelloSecond(),
+                        new HelloThird(),
                         new CancelAndStopIntentHandler(),
                         new StartShoppingIntentHandler(),
                         new FallbackIntentHandler(),
