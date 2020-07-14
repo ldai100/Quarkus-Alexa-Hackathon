@@ -16,7 +16,6 @@ public class StartShoppingIntentHandler implements RequestHandler {
         return input.matches(Predicates.intentName("StartShoppingIntentHandler"));
     }
 
-    @lombok.SneakyThrows
     @Override
     public Optional<Response> handle(HandlerInput input) {
         Request request = input.getRequestEnvelope().getRequest();
@@ -31,7 +30,11 @@ public class StartShoppingIntentHandler implements RequestHandler {
 //            speechText = String.format("Now i know the item you want to buy is %s.", buyItem);
             List<Product> productList = new ArrayList<>();
             StringBuilder sb = new StringBuilder();
-            productList = Utils.parse(buyItem);
+            try {
+                productList = Utils.parse(buyItem);
+            } catch (Exception e){
+                e.printStackTrace();
+            }
 //                for (int i = 0; i < Math.min(2, productList.size()); ++i){
 //                    Product product = productList.get(i);
 //                    sb.append(product.toString());

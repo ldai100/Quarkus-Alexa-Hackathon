@@ -1,0 +1,86 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "grocery project",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "StartShoppingIntentHandler",
+          "slots": [
+            {
+              "name": "Item",
+              "type": "LIST_OF_ITEMS"
+            }
+          ],
+          "samples": [
+            "hello shopping",
+            "get me {Item}"
+          ]
+        },
+        {
+          "name": "HelloFirst",
+          "slots": [],
+          "samples": [
+            "hello them"
+          ]
+        },
+        {
+          "name": "HelloSecond",
+          "slots": [],
+          "samples": [
+            "hello you"
+          ]
+        },
+        {
+          "name": "HelloThird",
+          "slots": [],
+          "samples": [
+            "hello me"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "LIST_OF_ITEMS",
+          "values": [
+            {
+              "name": {
+                "value": "yogurt"
+              }
+            },
+            {
+              "name": {
+                "value": "juice"
+              }
+            },
+            {
+              "name": {
+                "value": "milk"
+              }
+            },
+            {
+              "name": {
+                "value": "beef"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
