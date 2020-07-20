@@ -1,9 +1,18 @@
-package esfe.handlers.utils;
+package esfe.handlers.models;
 
 public class Product {
 
-    String description;
-    String price;
+    private String name;
+    private String description;
+    private String price;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getDescription() {
         return description;
@@ -19,13 +28,5 @@ public class Product {
 
     public void setPrice(String price) {
         this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "description='" + description + '\'' +
-                ", price='" + price + '\'' +
-                '}';
     }
 }

@@ -19,13 +19,12 @@ public class ShoppingStreamHandler extends SkillStreamHandler {
 
     @Retry(maxRetries = 3)
     private static Skill getSkill() {
-        log.error("log test");
+        log.error("project begin");
 
         return Skills.standard()
                 .addRequestHandlers(
-                        new HelloFirst(),
-                        new HelloSecond(),
-                        new HelloThird(),
+                        new ConfirmIntentHandler(),
+                        new PlaceOrderIntentHandler(),
                         new CancelAndStopIntentHandler(),
                         new StartShoppingIntentHandler(),
                         new FallbackIntentHandler(),
