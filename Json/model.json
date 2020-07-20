@@ -33,24 +33,31 @@
           ]
         },
         {
-          "name": "HelloFirst",
-          "slots": [],
+          "name": "ConfirmIntentHandler",
+          "slots": [
+            {
+              "name": "Product",
+              "type": "LIST_OF_PRODUCTS"
+            }
+          ],
           "samples": [
-            "hello them"
+            "add {Product}",
+            "add {Product} to my cart",
+            "I pick {Product} one",
+            "I select {Product} one",
+            "I pick {Product}",
+            "I select {Product}"
           ]
         },
         {
-          "name": "HelloSecond",
+          "name": "PlaceOrderIntentHandler",
           "slots": [],
           "samples": [
+            "place order",
+            "checkout",
+            "I want to check out",
+            "check out",
             "hello you"
-          ]
-        },
-        {
-          "name": "HelloThird",
-          "slots": [],
-          "samples": [
-            "hello me"
           ]
         }
       ],
@@ -58,11 +65,6 @@
         {
           "name": "LIST_OF_ITEMS",
           "values": [
-            {
-              "name": {
-                "value": "yogurt"
-              }
-            },
             {
               "name": {
                 "value": "juice"
@@ -75,7 +77,32 @@
             },
             {
               "name": {
+                "value": "cookies"
+              }
+            },
+            {
+              "name": {
                 "value": "beef"
+              }
+            }
+          ]
+        },
+        {
+          "name": "LIST_OF_PRODUCTS",
+          "values": [
+            {
+              "name": {
+                "value": "first"
+              }
+            },
+            {
+              "name": {
+                "value": "second"
+              }
+            },
+            {
+              "name": {
+                "value": "third"
               }
             }
           ]
