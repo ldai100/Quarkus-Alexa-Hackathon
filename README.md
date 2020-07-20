@@ -1,12 +1,12 @@
-#This is an application built for Quarkus Hackathon
+# This is an application built for Quarkus Hackathon
 
-##Environment Requirements
+## Environment Requirements
 
 JDK 8 or 11+ installed with JAVA_HOME configured appropriately
 
 Apache Maven 3.6.2+
 
-##Application Build
+## Application Build
 
 In terminal, go to the root folder of this project and type:
 
@@ -14,7 +14,7 @@ In terminal, go to the root folder of this project and type:
 
 This should build everything you need and necessary scripts inside the `target` folder.
 
-##Application Deployment
+## Application Deployment
 
 After the application is built, quarkus should generate a file `manage.sh`.
 You need to set up your local `aws cli` to utilize this. You can follow this site `https://docs.aws.amazon.com/polly/latest/dg/setup-aws-cli.html`
@@ -28,13 +28,13 @@ Copy your execution role ARN, either put it as your environment variable or put 
 now write the script `sh manage.sh create` to create your lambda function.
 You should get a successful message.
 
-##Set up Alexa Skill Development Console to test
+## Set up Alexa Skill Development Console to test
 // To do
 
 
-##Quarkus Related Functionalities
+## Quarkus Related Functionalities
 
-###Logging Ability
+### Logging Ability
 Extension has already been added to the project with root logging level set to info.
 To generate regular logs in other classes:
 
@@ -51,7 +51,7 @@ log.error("log test");
 // Start logging in your code;
 ```
 
-###Fault Tolerance Capabilities
+### Fault Tolerance Capabilities
 Extension for Fault Tolerance was already added. To use Fault Tolerance functionalities, simply use CDI's.
 Easy to use CDI's:
 ```$xslt
