@@ -1,0 +1,113 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "grocery project",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "StartShoppingIntentHandler",
+          "slots": [
+            {
+              "name": "Item",
+              "type": "LIST_OF_ITEMS"
+            }
+          ],
+          "samples": [
+            "hello shopping",
+            "get me {Item}"
+          ]
+        },
+        {
+          "name": "ConfirmIntentHandler",
+          "slots": [
+            {
+              "name": "Product",
+              "type": "LIST_OF_PRODUCTS"
+            }
+          ],
+          "samples": [
+            "add {Product}",
+            "add {Product} to my cart",
+            "I pick {Product} one",
+            "I select {Product} one",
+            "I pick {Product}",
+            "I select {Product}"
+          ]
+        },
+        {
+          "name": "PlaceOrderIntentHandler",
+          "slots": [],
+          "samples": [
+            "place order",
+            "checkout",
+            "I want to check out",
+            "check out",
+            "hello you"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "LIST_OF_ITEMS",
+          "values": [
+            {
+              "name": {
+                "value": "juice"
+              }
+            },
+            {
+              "name": {
+                "value": "milk"
+              }
+            },
+            {
+              "name": {
+                "value": "cookies"
+              }
+            },
+            {
+              "name": {
+                "value": "beef"
+              }
+            }
+          ]
+        },
+        {
+          "name": "LIST_OF_PRODUCTS",
+          "values": [
+            {
+              "name": {
+                "value": "first"
+              }
+            },
+            {
+              "name": {
+                "value": "second"
+              }
+            },
+            {
+              "name": {
+                "value": "third"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
