@@ -23,14 +23,14 @@ public class PlaceOrderIntentHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-        log.error("in PlaceOrderIntentHandler");
+        log.error("PlaceOrderIntentHandler ====> start");
 
         String name =  (String) input.getAttributesManager().getSessionAttributes().get(CART_NAME);
         String[] newName = name.split(",");
-        log.error("in PlaceOrderIntentHandler"+ newName[0] +" , "+ newName[1]);
+        log.error("PlaceOrderIntentHandler  ====> "+ newName[0] +" , "+ newName[1]);
 
         String speechText = String.format("the order %s with price %s has been placed, thank you, Good bye",newName[0], newName[1]);
-        log.error("----------------return to alexa from hello second--------------- ");
+        log.error("PlaceOrderIntentHandler ====> return to alexa");
 
         return input.getResponseBuilder()
                 .withSpeech(speechText)

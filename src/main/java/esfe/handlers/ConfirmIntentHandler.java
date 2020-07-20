@@ -15,12 +15,13 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.util.*;
 
 import static esfe.handlers.utils.Utils.*;
 
 public class ConfirmIntentHandler implements RequestHandler {
+
+    private String host;
 
     RestHighLevelClient client = new RestHighLevelClient(
             RestClient.builder(
@@ -35,7 +36,7 @@ public class ConfirmIntentHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-        log.error("get in ConfirmIntentHandler");
+        log.error("ConfirmIntentHandler ===> start");
 
         Request request = input.getRequestEnvelope().getRequest();
         IntentRequest intentRequest = (IntentRequest) request;
@@ -48,8 +49,8 @@ public class ConfirmIntentHandler implements RequestHandler {
         log.error("ConfirmIntentHandler  ==> check slot ");
         if (cartSlot != null && cartSlot.getResolutions() != null && cartSlot.getResolutions().toString().contains("ER_SUCCESS_MATCH")){
             String selectedItem = cartSlot.getValue();
-            log.error("============slot ====> " + selectedItem+"==================");
-            log.error("==================CHECK KEYS IN ConfirmIntentHandler=========================");
+            log.error("ConfirmIntentHandler ====> slot: " + selectedItem+"==================");
+            log.error("ConfirmIntentHandler ====> check key ");
             log.error((String) input.getAttributesManager().getSessionAttributes().get(FIRST));
 
             String name = (String) input.getAttributesManager().getSessionAttributes().get(FIRST);
@@ -73,7 +74,7 @@ public class ConfirmIntentHandler implements RequestHandler {
             }
 
         }
-        log.error("----------------return to alexa from hello first--------------- ");
+        log.error("ConfirmIntentHandler ====> return to alexa");
 
         return input.getResponseBuilder()
                 .withSpeech(speechText)

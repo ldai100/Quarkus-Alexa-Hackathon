@@ -46,7 +46,7 @@ public class StartShoppingIntentHandler implements RequestHandler {
         String speechText;
         List<Map<String, Object>> productList = null;
 
-        log.error("StartShoppingIntentHandler ====>  start check slot");
+        log.error("StartShoppingIntentHandler ====>  start check slot if statement");
 
         if (itemSlot != null && itemSlot.getResolutions() != null && itemSlot.getResolutions().toString().contains("ER_SUCCESS_MATCH")){
 
@@ -83,10 +83,10 @@ public class StartShoppingIntentHandler implements RequestHandler {
             speechText = String.format("please tell me a valid item, you can try again by saying get me milk");
         }
 
-        log.error("==================CHECK KEYS=========================");
+        log.error("StartShoppingIntentHandler ===> check key slot ");
         log.error((String) input.getAttributesManager().getSessionAttributes().get(FIRST));
 
-        log.error("----------------return to alexa from start shopping--------------- ");
+        log.error("StartShoppingIntentHandler ===> return to alexa ");
 
         return input.getResponseBuilder()
                 .withSimpleCard("HelloWorld", speechText)
