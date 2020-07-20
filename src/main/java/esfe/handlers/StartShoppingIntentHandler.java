@@ -69,14 +69,14 @@ public class StartShoppingIntentHandler implements RequestHandler {
                     speechText = String.format("please tell me a valid item, you can try again by saying get me milk");
                 } else if (productList.size() == 1){
                     input.getAttributesManager().setSessionAttributes(Collections.singletonMap(FIRST, convert(productList.get(0).get("description")) + "#" + productList.get(0).get("price")));
-                    speechText = String.format("Here are list of %s, the first is %s with price %s, you can select by saying saying add first to my cart", buyItem, convert(productList.get(0).get("description")), productList.get(0).get("price"));
+                    speechText = String.format("Here are list of %s, the first is %s with price %s, you can select by saying add first to my cart", buyItem, convert(productList.get(0).get("description")), productList.get(0).get("price"));
                 }
                 else if (productList.size() == 2){
                     input.getAttributesManager().setSessionAttributes(Collections.singletonMap(FIRST, convert(productList.get(0).get("description")) + "#" + productList.get(0).get("price") + "#" + convert(productList.get(1).get("description")) + "#" + productList.get(1).get("price")));
-                    speechText = String.format("Here are list of %s, the first is %s with price %s, the second is %s with price %s, you can select by saying saying add first to my cart", buyItem, convert(productList.get(0).get("description")), productList.get(0).get("price"), convert(productList.get(1).get("description")), productList.get(1).get("price"));
+                    speechText = String.format("Here are list of %s, the first is %s with price %s, the second is %s with price %s, you can select by saying add first to my cart", buyItem, convert(productList.get(0).get("description")), productList.get(0).get("price"), convert(productList.get(1).get("description")), productList.get(1).get("price"));
                 } else {
                     input.getAttributesManager().setSessionAttributes(Collections.singletonMap(FIRST, convert(productList.get(0).get("description")) + "#" + productList.get(0).get("price") + "#" + convert(productList.get(1).get("description")) + "#" + productList.get(1).get("price") + "#" + convert(productList.get(2).get("description")) + "#" + productList.get(2).get("price")));
-                    speechText = String.format("Here are list of %s, the first is %s with price %s, the second is %s with price %s and the third is %s with price is %s, you can select by saying saying add first to my cart", buyItem, convert(productList.get(0).get("description")), productList.get(0).get("price"), convert(productList.get(1).get("description")), productList.get(1).get("price"), convert(productList.get(2).get("description")), productList.get(2).get("price"));
+                    speechText = String.format("Here are list of %s, the first is %s with price %s, the second is %s with price %s and the third is %s with price is %s, you can select by saying add first to my cart", buyItem, convert(productList.get(0).get("description")), productList.get(0).get("price"), convert(productList.get(1).get("description")), productList.get(1).get("price"), convert(productList.get(2).get("description")), productList.get(2).get("price"));
                 }
             }
         } else {
