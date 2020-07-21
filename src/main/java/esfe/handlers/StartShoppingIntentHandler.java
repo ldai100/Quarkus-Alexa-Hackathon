@@ -24,10 +24,12 @@ import static esfe.handlers.utils.Utils.*;
 public class StartShoppingIntentHandler implements RequestHandler {
 
     private static final Logger log = LoggerFactory.getLogger(ShoppingStreamHandler.class);
+    
+    private String host = "" // add your own elastic search ip here;
 
     RestHighLevelClient client = new RestHighLevelClient(
             RestClient.builder(
-                    new HttpHost("3.22.175.238", 9200, "http")));
+                    new HttpHost(host, 9200, "http")));
 
 
     @Override
