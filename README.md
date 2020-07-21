@@ -29,8 +29,11 @@ now write the script `sh manage.sh create` to create your lambda function.
 You should get a successful message.
 
 ## Set up Alexa Skill Development Console to test
-// To do
 
+Once your lambda is in place, you can start testing it on AWS alexa console.
+Simply copy the file `Json/model.json` and paste it in intent json editor on alexa console and build the model.
+You can then test it by going to the test tab and type in things you can say.
+(You will need to set up your own Elastic Search to make everything work)
 
 ## Quarkus Related Functionalities
 
