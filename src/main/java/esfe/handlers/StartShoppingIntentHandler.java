@@ -25,7 +25,7 @@ public class StartShoppingIntentHandler implements RequestHandler {
 
     private static final Logger log = LoggerFactory.getLogger(ShoppingStreamHandler.class);
     
-    private String host = "" // add your own elastic search ip here;
+    private String host = ""; // add your own elastic search ip here;
 
     RestHighLevelClient client = new RestHighLevelClient(
             RestClient.builder(
